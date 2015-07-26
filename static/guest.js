@@ -5792,7 +5792,8 @@ if (function(t, e) {
                 })
             }, t.prototype.fetchRetailers = function(t) {
                 var e;
-                return e = $("#wedding-data").data().url + "/registry/fetchnames", $.get(e, function(e) {
+                //HACK return e = $("#wedding-data").data().url + "/registry/fetchnames", $.get(e, function(e) {
+                return e = "https://www.theknot.com/us/priya-amin-and-vishal-amin-aug-2015/registry/fetchnames", $.get(e, function(e) {
                     var n;
                     return n = t.find(".registry-nav"), e.trim() ? (n.html(e), Elemental.load(".registry-nav")) : n.hide()
                 })
@@ -7949,19 +7950,7 @@ LiveUpdate.updateThemePhoto = function(t, e) {
 }, getFrameWidth = function() {
     return Number($("#cover-image").css("width").slice(0, -2))
 };
-var segmentIoTrackPage = function(t) {
-        var e, n = location.pathname.split("/")[3] || "wedding";
-        t && $.cookie("pageCategory", "preview"), e = $.cookie("pageCategory") || "guest facing", window.analytics.page(e, n)
-    },
-    segmentIoTrackPhoto = function() {
-        $(".photo-image").on("click", function() {
-            window.analytics.track("Photo Inspecting", {
-                source: "photo",
-                brideSide: !1
-            })
-        })
-    },
-    setAnchorTarget = function(t) {
+var setAnchorTarget = function(t) {
         t && $("a").attr("target", "_self")
     },
     setPreview = function(t) {
