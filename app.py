@@ -10,6 +10,18 @@ def home():
 def details():
   return render_template('details.html')
 
+@app.route("/photos")
+def photos():
+  return render_template('photos.html')
+
+@app.route("/photos/college-years")
+def collegeYears():
+  return render_template('college-years.html')
+
+@app.route("/photos/engagement")
+def engagement():
+  return render_template('engagement.html')
+
 @app.route("/registry")
 def registry():
   return render_template('registry.html')
