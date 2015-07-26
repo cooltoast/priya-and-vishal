@@ -6,6 +6,10 @@ app = Flask(__name__)
 def home():
   return render_template('main.html')
 
+@app.route("/registry")
+def registry():
+  return render_template('registry.html')
+
 @app.route("/hello")
 def hello():
   return "Hello World!"
