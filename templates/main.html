@@ -4,588 +4,13 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script src="https://js-agent.newrelic.com/nr-632.min.js"></script>
-    <script type="text/javascript" id="analytics-js" async="" src="https://cdn.segment.io/analytics.js/v1/nibq354xak/analytics.min.js"></script>
-    <script type="text/javascript">
-        window.NREUM || (NREUM = {});
-        NREUM.info = {
-            "beacon": "bam.nr-data.net",
-            "errorBeacon": "bam.nr-data.net",
-            "licenseKey": "62bf94459b",
-            "applicationID": "3739930",
-            "transactionName": "dV0LEEZaWVsGRRdHEhlVEAFHQRpECkNdHRJeXRI=",
-            "queueTime": 0,
-            "applicationTime": 145,
-            "ttGuid": "",
-            "agentToken": null,
-            "agent": "js-agent.newrelic.com/nr-632.min.js"
-        }
-    </script>
-    <script type="text/javascript">
-        (window.NREUM || (NREUM = {})).loader_config = {
-            xpid: "VwEHVVZWGwAHV1hbBAE="
-        };
-        window.NREUM || (NREUM = {}), __nr_require = function(t, e, n) {
-            function r(n) {
-                if (!e[n]) {
-                    var o = e[n] = {
-                        exports: {}
-                    };
-                    t[n][0].call(o.exports, function(e) {
-                        var o = t[n][1][e];
-                        return r(o ? o : e)
-                    }, o, o.exports)
-                }
-                return e[n].exports
-            }
-            if ("function" == typeof __nr_require) return __nr_require;
-            for (var o = 0; o < n.length; o++) r(n[o]);
-            return r
-        }({
-            QJf3ax: [function(t, e) {
-                function n(t) {
-                    function e(e, n, a) {
-                        t && t(e, n, a), a || (a = {});
-                        for (var c = s(e), u = c.length, f = i(a, o, r), d = 0; u > d; d++) c[d].apply(f, n);
-                        return f
-                    }
-
-                    function a(t, e) {
-                        u[t] = s(t).concat(e)
-                    }
-
-                    function s(t) {
-                        return u[t] || []
-                    }
-
-                    function c() {
-                        return n(e)
-                    }
-                    var u = {};
-                    return {
-                        on: a,
-                        emit: e,
-                        create: c,
-                        listeners: s,
-                        _events: u
-                    }
-                }
-
-                function r() {
-                    return {}
-                }
-                var o = "nr@context",
-                    i = t("gos");
-                e.exports = n()
-            }, {
-                gos: "7eSDFh"
-            }],
-            ee: [function(t, e) {
-                e.exports = t("QJf3ax")
-            }, {}],
-            3: [function(t) {
-                function e(t) {
-                    try {
-                        i.console && console.log(t)
-                    } catch (e) {}
-                }
-                var n, r = t("ee"),
-                    o = t(1),
-                    i = {};
-                try {
-                    n = localStorage.getItem("__nr_flags").split(","), console && "function" == typeof console.log && (i.console = !0, -1 !== n.indexOf("dev") && (i.dev = !0), -1 !== n.indexOf("nr_dev") && (i.nrDev = !0))
-                } catch (a) {}
-                i.nrDev && r.on("internal-error", function(t) {
-                    e(t.stack)
-                }), i.dev && r.on("fn-err", function(t, n, r) {
-                    e(r.stack)
-                }), i.dev && (e("NR AGENT IN DEVELOPMENT MODE"), e("flags: " + o(i, function(t) {
-                    return t
-                }).join(", ")))
-            }, {
-                1: 20,
-                ee: "QJf3ax"
-            }],
-            4: [function(t) {
-                function e(t, e, n, i, s) {
-                    try {
-                        c ? c -= 1 : r("err", [s || new UncaughtException(t, e, n)])
-                    } catch (u) {
-                        try {
-                            r("ierr", [u, (new Date).getTime(), !0])
-                        } catch (f) {}
-                    }
-                    return "function" == typeof a ? a.apply(this, o(arguments)) : !1
-                }
-
-                function UncaughtException(t, e, n) {
-                    this.message = t || "Uncaught error with no additional information", this.sourceURL = e, this.line = n
-                }
-
-                function n(t) {
-                    r("err", [t, (new Date).getTime()])
-                }
-                var r = t("handle"),
-                    o = t(6),
-                    i = t("ee"),
-                    a = window.onerror,
-                    s = !1,
-                    c = 0;
-                t("loader").features.err = !0, t(3), window.onerror = e;
-                try {
-                    throw new Error
-                } catch (u) {
-                    "stack" in u && (t(4), t(5), "addEventListener" in window && t(1), window.XMLHttpRequest && XMLHttpRequest.prototype && XMLHttpRequest.prototype.addEventListener && window.XMLHttpRequest && XMLHttpRequest.prototype && XMLHttpRequest.prototype.addEventListener && !/CriOS/.test(navigator.userAgent) && t(2), s = !0)
-                }
-                i.on("fn-start", function() {
-                    s && (c += 1)
-                }), i.on("fn-err", function(t, e, r) {
-                    s && (this.thrown = !0, n(r))
-                }), i.on("fn-end", function() {
-                    s && !this.thrown && c > 0 && (c -= 1)
-                }), i.on("internal-error", function(t) {
-                    r("ierr", [t, (new Date).getTime(), !0])
-                })
-            }, {
-                1: 5,
-                2: 8,
-                3: 3,
-                4: 7,
-                5: 6,
-                6: 21,
-                ee: "QJf3ax",
-                handle: "D5DuLP",
-                loader: "G9z0Bl"
-            }],
-            5: [function(t, e) {
-                function n(t) {
-                    i.inPlace(t, ["addEventListener", "removeEventListener"], "-", r)
-                }
-
-                function r(t) {
-                    return t[1]
-                }
-                var o = (t(1), t("ee").create()),
-                    i = t(2)(o),
-                    a = t("gos");
-                if (e.exports = o, n(window), "getPrototypeOf" in Object) {
-                    for (var s = document; s && !s.hasOwnProperty("addEventListener");) s = Object.getPrototypeOf(s);
-                    s && n(s);
-                    for (var c = XMLHttpRequest.prototype; c && !c.hasOwnProperty("addEventListener");) c = Object.getPrototypeOf(c);
-                    c && n(c)
-                } else XMLHttpRequest.prototype.hasOwnProperty("addEventListener") && n(XMLHttpRequest.prototype);
-                o.on("addEventListener-start", function(t) {
-                    if (t[1]) {
-                        var e = t[1];
-                        "function" == typeof e ? this.wrapped = t[1] = a(e, "nr@wrapped", function() {
-                            return i(e, "fn-", null, e.name || "anonymous")
-                        }) : "function" == typeof e.handleEvent && i.inPlace(e, ["handleEvent"], "fn-")
-                    }
-                }), o.on("removeEventListener-start", function(t) {
-                    var e = this.wrapped;
-                    e && (t[1] = e)
-                })
-            }, {
-                1: 21,
-                2: 22,
-                ee: "QJf3ax",
-                gos: "7eSDFh"
-            }],
-            6: [function(t, e) {
-                var n = (t(2), t("ee").create()),
-                    r = t(1)(n);
-                e.exports = n, r.inPlace(window, ["requestAnimationFrame", "mozRequestAnimationFrame", "webkitRequestAnimationFrame", "msRequestAnimationFrame"], "raf-"), n.on("raf-start", function(t) {
-                    t[0] = r(t[0], "fn-")
-                })
-            }, {
-                1: 22,
-                2: 21,
-                ee: "QJf3ax"
-            }],
-            7: [function(t, e) {
-                function n(t, e, n) {
-                    t[0] = o(t[0], "fn-", null, n)
-                }
-                var r = (t(2), t("ee").create()),
-                    o = t(1)(r);
-                e.exports = r, o.inPlace(window, ["setTimeout", "setInterval", "setImmediate"], "setTimer-"), r.on("setTimer-start", n)
-            }, {
-                1: 22,
-                2: 21,
-                ee: "QJf3ax"
-            }],
-            8: [function(t, e) {
-                function n() {
-                    u.inPlace(this, p, "fn-")
-                }
-
-                function r(t, e) {
-                    u.inPlace(e, ["onreadystatechange"], "fn-")
-                }
-
-                function o(t, e) {
-                    return e
-                }
-
-                function i(t, e) {
-                    for (var n in t) e[n] = t[n];
-                    return e
-                }
-                var a = t("ee").create(),
-                    s = t(1),
-                    c = t(2),
-                    u = c(a),
-                    f = c(s),
-                    d = window.XMLHttpRequest,
-                    p = ["onload", "onerror", "onabort", "onloadstart", "onloadend", "onprogress", "ontimeout"];
-                e.exports = a, window.XMLHttpRequest = function(t) {
-                    var e = new d(t);
-                    try {
-                        a.emit("new-xhr", [], e), f.inPlace(e, ["addEventListener", "removeEventListener"], "-", o), e.addEventListener("readystatechange", n, !1)
-                    } catch (r) {
-                        try {
-                            a.emit("internal-error", [r])
-                        } catch (i) {}
-                    }
-                    return e
-                }, i(d, XMLHttpRequest), XMLHttpRequest.prototype = d.prototype, u.inPlace(XMLHttpRequest.prototype, ["open", "send"], "-xhr-", o), a.on("send-xhr-start", r), a.on("open-xhr-start", r)
-            }, {
-                1: 5,
-                2: 22,
-                ee: "QJf3ax"
-            }],
-            9: [function(t) {
-                function e(t) {
-                    var e = this.params,
-                        r = this.metrics;
-                    if (!this.ended) {
-                        this.ended = !0;
-                        for (var i = 0; c > i; i++) t.removeEventListener(s[i], this.listener, !1);
-                        if (!e.aborted) {
-                            if (r.duration = (new Date).getTime() - this.startTime, 4 === t.readyState) {
-                                e.status = t.status;
-                                var a = t.responseType,
-                                    u = "arraybuffer" === a || "blob" === a || "json" === a ? t.response : t.responseText,
-                                    f = n(u);
-                                if (f && (r.rxSize = f), this.sameOrigin) {
-                                    var d = t.getResponseHeader("X-NewRelic-App-Data");
-                                    d && (e.cat = d.split(", ").pop())
-                                }
-                            } else e.status = 0;
-                            r.cbTime = this.cbTime, o("xhr", [e, r, this.startTime])
-                        }
-                    }
-                }
-
-                function n(t) {
-                    if ("string" == typeof t && t.length) return t.length;
-                    if ("object" != typeof t) return void 0;
-                    if ("undefined" != typeof ArrayBuffer && t instanceof ArrayBuffer && t.byteLength) return t.byteLength;
-                    if ("undefined" != typeof Blob && t instanceof Blob && t.size) return t.size;
-                    if ("undefined" != typeof FormData && t instanceof FormData) return void 0;
-                    try {
-                        return JSON.stringify(t).length
-                    } catch (e) {
-                        return void 0
-                    }
-                }
-
-                function r(t, e) {
-                    var n = i(e),
-                        r = t.params;
-                    r.host = n.hostname + ":" + n.port, r.pathname = n.pathname, t.sameOrigin = n.sameOrigin
-                }
-                if (window.XMLHttpRequest && XMLHttpRequest.prototype && XMLHttpRequest.prototype.addEventListener && !/CriOS/.test(navigator.userAgent)) {
-                    t("loader").features.xhr = !0;
-                    var o = t("handle"),
-                        i = t(2),
-                        a = t("ee"),
-                        s = ["load", "error", "abort", "timeout"],
-                        c = s.length,
-                        u = t(1);
-                    t(4), t(3), a.on("new-xhr", function() {
-                        this.totalCbs = 0, this.called = 0, this.cbTime = 0, this.end = e, this.ended = !1, this.xhrGuids = {}
-                    }), a.on("open-xhr-start", function(t) {
-                        this.params = {
-                            method: t[0]
-                        }, r(this, t[1]), this.metrics = {}
-                    }), a.on("open-xhr-end", function(t, e) {
-                        "loader_config" in NREUM && "xpid" in NREUM.loader_config && this.sameOrigin && e.setRequestHeader("X-NewRelic-ID", NREUM.loader_config.xpid)
-                    }), a.on("send-xhr-start", function(t, e) {
-                        var r = this.metrics,
-                            o = t[0],
-                            i = this;
-                        if (r && o) {
-                            var u = n(o);
-                            u && (r.txSize = u)
-                        }
-                        this.startTime = (new Date).getTime(), this.listener = function(t) {
-                            try {
-                                "abort" === t.type && (i.params.aborted = !0), ("load" !== t.type || i.called === i.totalCbs && (i.onloadCalled || "function" != typeof e.onload)) && i.end(e)
-                            } catch (n) {
-                                try {
-                                    a.emit("internal-error", [n])
-                                } catch (r) {}
-                            }
-                        };
-                        for (var f = 0; c > f; f++) e.addEventListener(s[f], this.listener, !1)
-                    }), a.on("xhr-cb-time", function(t, e, n) {
-                        this.cbTime += t, e ? this.onloadCalled = !0 : this.called += 1, this.called !== this.totalCbs || !this.onloadCalled && "function" == typeof n.onload || this.end(n)
-                    }), a.on("xhr-load-added", function(t, e) {
-                        var n = "" + u(t) + !!e;
-                        this.xhrGuids && !this.xhrGuids[n] && (this.xhrGuids[n] = !0, this.totalCbs += 1)
-                    }), a.on("xhr-load-removed", function(t, e) {
-                        var n = "" + u(t) + !!e;
-                        this.xhrGuids && this.xhrGuids[n] && (delete this.xhrGuids[n], this.totalCbs -= 1)
-                    }), a.on("addEventListener-end", function(t, e) {
-                        e instanceof XMLHttpRequest && "load" === t[0] && a.emit("xhr-load-added", [t[1], t[2]], e)
-                    }), a.on("removeEventListener-end", function(t, e) {
-                        e instanceof XMLHttpRequest && "load" === t[0] && a.emit("xhr-load-removed", [t[1], t[2]], e)
-                    }), a.on("fn-start", function(t, e, n) {
-                        e instanceof XMLHttpRequest && ("onload" === n && (this.onload = !0), ("load" === (t[0] && t[0].type) || this.onload) && (this.xhrCbStart = (new Date).getTime()))
-                    }), a.on("fn-end", function(t, e) {
-                        this.xhrCbStart && a.emit("xhr-cb-time", [(new Date).getTime() - this.xhrCbStart, this.onload, e], e)
-                    })
-                }
-            }, {
-                1: "XL7HBI",
-                2: 10,
-                3: 8,
-                4: 5,
-                ee: "QJf3ax",
-                handle: "D5DuLP",
-                loader: "G9z0Bl"
-            }],
-            10: [function(t, e) {
-                e.exports = function(t) {
-                    var e = document.createElement("a"),
-                        n = window.location,
-                        r = {};
-                    e.href = t, r.port = e.port;
-                    var o = e.href.split("://");
-                    return !r.port && o[1] && (r.port = o[1].split("/")[0].split("@").pop().split(":")[1]), r.port && "0" !== r.port || (r.port = "https" === o[0] ? "443" : "80"), r.hostname = e.hostname || n.hostname, r.pathname = e.pathname, r.protocol = o[0], "/" !== r.pathname.charAt(0) && (r.pathname = "/" + r.pathname), r.sameOrigin = !e.hostname || e.hostname === document.domain && e.port === n.port && e.protocol === n.protocol, r
-                }
-            }, {}],
-            11: [function(t, e) {
-                function n(t) {
-                    return function() {
-                        r(t, [(new Date).getTime()].concat(i(arguments)))
-                    }
-                }
-                var r = t("handle"),
-                    o = t(1),
-                    i = t(2);
-                "undefined" == typeof window.newrelic && (newrelic = window.NREUM);
-                var a = ["setPageViewName", "addPageAction", "setCustomAttribute", "finished", "addToTrace", "inlineHit", "noticeError"];
-                o(a, function(t, e) {
-                    window.NREUM[e] = n("api-" + e)
-                }), e.exports = window.NREUM
-            }, {
-                1: 20,
-                2: 21,
-                handle: "D5DuLP"
-            }],
-            "7eSDFh": [function(t, e) {
-                function n(t, e, n) {
-                    if (r.call(t, e)) return t[e];
-                    var o = n();
-                    if (Object.defineProperty && Object.keys) try {
-                        return Object.defineProperty(t, e, {
-                            value: o,
-                            writable: !0,
-                            enumerable: !1
-                        }), o
-                    } catch (i) {}
-                    return t[e] = o, o
-                }
-                var r = Object.prototype.hasOwnProperty;
-                e.exports = n
-            }, {}],
-            gos: [function(t, e) {
-                e.exports = t("7eSDFh")
-            }, {}],
-            handle: [function(t, e) {
-                e.exports = t("D5DuLP")
-            }, {}],
-            D5DuLP: [function(t, e) {
-                function n(t, e, n) {
-                    return r.listeners(t).length ? r.emit(t, e, n) : (o[t] || (o[t] = []), void o[t].push(e))
-                }
-                var r = t("ee").create(),
-                    o = {};
-                e.exports = n, n.ee = r, r.q = o
-            }, {
-                ee: "QJf3ax"
-            }],
-            id: [function(t, e) {
-                e.exports = t("XL7HBI")
-            }, {}],
-            XL7HBI: [function(t, e) {
-                function n(t) {
-                    var e = typeof t;
-                    return !t || "object" !== e && "function" !== e ? -1 : t === window ? 0 : i(t, o, function() {
-                        return r++
-                    })
-                }
-                var r = 1,
-                    o = "nr@id",
-                    i = t("gos");
-                e.exports = n
-            }, {
-                gos: "7eSDFh"
-            }],
-            G9z0Bl: [function(t, e) {
-                function n() {
-                    var t = p.info = NREUM.info,
-                        e = u.getElementsByTagName("script")[0];
-                    if (t && t.licenseKey && t.applicationID && e) {
-                        s(d, function(e, n) {
-                            e in t || (t[e] = n)
-                        });
-                        var n = "https" === f.split(":")[0] || t.sslForHttp;
-                        p.proto = n ? "https://" : "http://", a("mark", ["onload", i()]);
-                        var r = u.createElement("script");
-                        r.src = p.proto + t.agent, e.parentNode.insertBefore(r, e)
-                    }
-                }
-
-                function r() {
-                    "complete" === u.readyState && o()
-                }
-
-                function o() {
-                    a("mark", ["domContent", i()])
-                }
-
-                function i() {
-                    return (new Date).getTime()
-                }
-                var a = t("handle"),
-                    s = t(1),
-                    c = (t(2), window),
-                    u = c.document,
-                    f = ("" + location).split("?")[0],
-                    d = {
-                        beacon: "bam.nr-data.net",
-                        errorBeacon: "bam.nr-data.net",
-                        agent: "js-agent.newrelic.com/nr-632.min.js"
-                    },
-                    p = e.exports = {
-                        offset: i(),
-                        origin: f,
-                        features: {}
-                    };
-                u.addEventListener ? (u.addEventListener("DOMContentLoaded", o, !1), c.addEventListener("load", n, !1)) : (u.attachEvent("onreadystatechange", r), c.attachEvent("onload", n)), a("mark", ["firstbyte", i()])
-            }, {
-                1: 20,
-                2: 11,
-                handle: "D5DuLP"
-            }],
-            loader: [function(t, e) {
-                e.exports = t("G9z0Bl")
-            }, {}],
-            20: [function(t, e) {
-                function n(t, e) {
-                    var n = [],
-                        o = "",
-                        i = 0;
-                    for (o in t) r.call(t, o) && (n[i] = e(o, t[o]), i += 1);
-                    return n
-                }
-                var r = Object.prototype.hasOwnProperty;
-                e.exports = n
-            }, {}],
-            21: [function(t, e) {
-                function n(t, e, n) {
-                    e || (e = 0), "undefined" == typeof n && (n = t ? t.length : 0);
-                    for (var r = -1, o = n - e || 0, i = Array(0 > o ? 0 : o); ++r < o;) i[r] = t[e + r];
-                    return i
-                }
-                e.exports = n
-            }, {}],
-            22: [function(t, e) {
-                function n(t) {
-                    return !(t && "function" == typeof t && t.apply && !t[i])
-                }
-                var r = t("ee"),
-                    o = t(1),
-                    i = "nr@wrapper",
-                    a = Object.prototype.hasOwnProperty;
-                e.exports = function(t) {
-                    function e(t, e, r, a) {
-                        function nrWrapper() {
-                            var n, i, s, u;
-                            try {
-                                i = this, n = o(arguments), s = r && r(n, i) || {}
-                            } catch (d) {
-                                f([d, "", [n, i, a], s])
-                            }
-                            c(e + "start", [n, i, a], s);
-                            try {
-                                return u = t.apply(i, n)
-                            } catch (p) {
-                                throw c(e + "err", [n, i, p], s), p
-                            } finally {
-                                c(e + "end", [n, i, u], s)
-                            }
-                        }
-                        return n(t) ? t : (e || (e = ""), nrWrapper[i] = !0, u(t, nrWrapper), nrWrapper)
-                    }
-
-                    function s(t, r, o, i) {
-                        o || (o = "");
-                        var a, s, c, u = "-" === o.charAt(0);
-                        for (c = 0; c < r.length; c++) s = r[c], a = t[s], n(a) || (t[s] = e(a, u ? s + o : o, i, s))
-                    }
-
-                    function c(e, n, r) {
-                        try {
-                            t.emit(e, n, r)
-                        } catch (o) {
-                            f([o, e, n, r])
-                        }
-                    }
-
-                    function u(t, e) {
-                        if (Object.defineProperty && Object.keys) try {
-                            var n = Object.keys(t);
-                            return n.forEach(function(n) {
-                                Object.defineProperty(e, n, {
-                                    get: function() {
-                                        return t[n]
-                                    },
-                                    set: function(e) {
-                                        return t[n] = e, e
-                                    }
-                                })
-                            }), e
-                        } catch (r) {
-                            f([r])
-                        }
-                        for (var o in t) a.call(t, o) && (e[o] = t[o]);
-                        return e
-                    }
-
-                    function f(e) {
-                        try {
-                            t.emit("internal-error", e)
-                        } catch (n) {}
-                    }
-                    return t || (t = r), e.inPlace = s, e.flag = i, e
-                }
-            }, {
-                1: 21,
-                ee: "QJf3ax"
-            }]
-        }, {}, ["G9z0Bl", 4, 9]);
-    </script>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
     <meta content="Welcome to Priya Amin and Vishal Amin&#39;s Wedding Website! View photos, directions, registry details and more at The Knot." name="description">
     <title>Priya Amin and Vishal Amin's Wedding</title>
-    <link data-turbolinks-track="true" href="https://www.theknot.com/gs/assets/guest/layouts/layout1/app-808026d210cfdae0dbce94e56fbd457b.css" media="all" rel="stylesheet">
-    <link data-turbolinks-track="true" href="https://www.theknot.com/gs/assets/guest/themes/garden_lights-plum/v1/style-6d2c9ce2ce53e10893c06e8629817294.css" media="all" rel="stylesheet">
-    <script data-turbolinks-track="true" src="../static/guest.js"></script>
+    <link data-turbolinks-track="true" href="/static/layouts/layout1/app-808026d210cfdae0dbce94e56fbd457b.css" media="all" rel="stylesheet">
+    <link data-turbolinks-track="true" href="/static/themes/garden_lights-plum/v1/style-6d2c9ce2ce53e10893c06e8629817294.css" media="all" rel="stylesheet">
+    <script data-turbolinks-track="true" src="/static/guest.js"></script>
     <style>
         #header + #content > #left > #rlblock_left,
         #content > #right > .dose > .dosesingle,
@@ -593,30 +18,7 @@
             display: none !important;
         }
     </style>
-    <script data-turbolinks-track="true" src="../static/layout.js"></script>
-    <script type="text/javascript">
-        window.analytics = window.analytics || [], window.analytics.methods = ["identify", "group", "track", "page", "pageview", "alias", "ready", "on", "once", "off", "trackLink", "trackForm", "trackClick", "trackSubmit"], window.analytics.factory = function(t) {
-            return function() {
-                var a = Array.prototype.slice.call(arguments);
-                return a.unshift(t), window.analytics.push(a), window.analytics
-            }
-        };
-        for (var i = 0; i < window.analytics.methods.length; i++) {
-            var key = window.analytics.methods[i];
-            window.analytics[key] = window.analytics.factory(key)
-        }
-        window.analytics.load = function(t) {
-                if (!document.getElementById("analytics-js")) {
-                    var a = document.createElement("script");
-                    a.type = "text/javascript", a.id = "analytics-js", a.async = !0, a.src = ("https:" === document.location.protocol ? "https://" : "http://") + "cdn.segment.io/analytics.js/v1/" + t + "/analytics.min.js";
-                    var n = document.getElementsByTagName("script")[0];
-                    n.parentNode.insertBefore(a, n)
-                }
-            }, window.analytics.SNIPPET_VERSION = "2.0.9",
-            window.analytics.load('nibq354xak');
-    </script>
-    <meta content="authenticity_token" name="csrf-param">
-    <meta content="naBHjojft/UpP3SI/01jdFe3rRi5wGrAwSY30OYKYR8=" name="csrf-token">
+    <script data-turbolinks-track="true" src="/static/layout.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin%7CCalligraffitti%7CAlex+Brush">
     <style>
         body {
@@ -688,10 +90,10 @@
                         <ul>
                             <li><a class="selected" href="/">Our Wedding</a>
                                 <ul>
-                                    <li><a class="selected" href="/#our-story">Our Story</a></li>
-                                    <li><a class="selected" href="/#our-wedding">Our Wedding</a></li>
-                                    <li><a class="selected" href="/#other-events">Other Events</a></li>
-                                    <li><a class="selected" href="/#wedding-party">Wedding Party</a></li>
+                                    <li><a class="" href="/#our-story">Our Story</a></li>
+                                    <li><a class="" href="/#our-wedding">Our Wedding</a></li>
+                                    <li><a class="" href="/#other-events">Other Events</a></li>
+                                    <li><a class="" href="/#wedding-party">Wedding Party</a></li>
                                 </ul>
                             </li>
                             <li><a class="" href="/details">Details</a>
@@ -718,7 +120,7 @@
         </div>
         <header id="header">
             <div class="header-background"></div>
-            <div id="cover-image"><img class="wide-cover-image" src="./Priya Amin and Vishal Amin's Wedding_files/c6d9667f-ebc1-4241-94db-34fa687b97b7~rt_0-cr_0.0.2781.1390-rs_1800.h" title="" style="outline: red dashed 1px;"></div>
+            <div id="cover-image"><img class="wide-cover-image" src="//media.front.xoedge.com/images/c6d9667f-ebc1-4241-94db-34fa687b97b7~rt_0-cr_0.0.2781.1390-rs_1800.h" title=""></div>
             <div id="title-container">
                 <h1 id="wedding-title">Priya and Vishal</h1>
                 <h2 id="wedding-date-location"><span id="wedding-date">August 29, 2015</span> in <span id="wedding-location">MarcoIsland, FL</span></h2>
@@ -741,7 +143,7 @@
                         <div class="section-items">
                             <div class="item">
                                 <div class="item-title">Boy Meets Girl</div>
-                                <div class="item-image-container"><img class="item-image" src="./Priya Amin and Vishal Amin's Wedding_files/38ecd899-7127-4def-ae57-31ca8a20b91a~rt_-cr_-rs_1800.h"></div>
+                                <div class="item-image-container"><img class="item-image" src="//media.front.xoedge.com/images/38ecd899-7127-4def-ae57-31ca8a20b91a~rt_-cr_"></div>
                                 <div class="item-description">
                                     <p>Priya and Vishal were both in Pharmacy School at Rutgers University in New Brunswick, NJ. They first met one another through their pharmacy fraternity in the Spring of 2007, however did not really begin their friendship until Spring of 2008 after talking during a convention in Clearwater, Florida. They did however take their relationship to the next level by becoming Facebook friends in November 2007 (it is notable that they are not sharing a relationship status as Priya is still "married" to one of her best friends). They spent the next many months getting to know each other while trying to battle the busy years of pharmacy school. By the end of 2009, their friendship turned to fondness, and they began to date. Early in their relationship, Vishal would always think of Priya and get her little gifts on his travels, while Priya would always return the favor by losing them all.
                                         <br>
@@ -751,7 +153,7 @@
                             <div class="item-separator"></div>
                             <div class="item">
                                 <div class="item-title">Boy Leaves Girl (And Then Girl Leaves Boy)</div>
-                                <div class="item-image-container"><img class="item-image" src="./Priya Amin and Vishal Amin's Wedding_files/0dd08e23-8f01-4e47-a2f9-15e780270b81~rt_0-cr_-rs_1800.h"></div>
+                                <div class="item-image-container"><img class="item-image" src="//media.front.xoedge.com/images/0dd08e23-8f01-4e47-a2f9-15e780270b81~rt_0-cr_"></div>
                                 <div class="item-description">
                                     <p>Upon graduating, Vishal was accepted to a residency at CVS Corporate headquarters (mainly due to Priya's friend who was doing a rotation there). He could not be more excited to start his career, but was sad to leave Priya in New Jersey, as she was in her final year of Pharmacy School. They thought it would be a tough year with a 4-hour drive between them, but did not realize that for the following two years, the distance would be another 2,500+ miles greater. Priya was accepted to a first year residency in San Diego, CA and stayed to complete a second year residency. Although the distance was great and the visits were few, Vishal and Priya were able to maintain a strong connection through the phone, video chats and the occasional cross-country trek. Who would have thought...the 3 hour time difference between the east and west coast worked in their favor, as Vishal is a night owl who frequently played soccer and video games until 1 AM and Priya loves to sleep and would be in bed by 10 PM (sometimes before then).</p>
                                     <p>
@@ -765,7 +167,7 @@
                             <div class="item-separator"></div>
                             <div class="item">
                                 <div class="item-title">Boy Proposes to Girl</div>
-                                <div class="item-image-container"><img class="item-image" src="./Priya Amin and Vishal Amin's Wedding_files/b8d0e358-e373-4829-95ee-22d3bdbba7b1~rt_270-cr_-rs_1800.h"></div>
+                                <div class="item-image-container"><img class="item-image" src="//media.front.xoedge.com/images/b8d0e358-e373-4829-95ee-22d3bdbba7b1~rt_270-cr_"></div>
                                 <div class="item-description">
                                     <p>This is where the story gets interesting. Priya was preparing to finish her last year in California and Vishal was preparing a proposal. He is a person who loves his games (AKA Gamemaster), and of course, that is what the proposal turned into. He enlisted the help of his friends, both old and new, and created a game-oriented proposal with a full introductory video (which you can see here: <a href="http://youtu.be/E0GrffdPnzU" target="_blank">The Introduction Video Used in the Proposal</a><span></span>). The game consisted of a zoo puzzle, trip to the zoo, real life clue game and then a scavenger hunt before finally meeting up with Vishal at the beach. Although it seems quick and straightforward, nothing with Vishal ever is, and the whole ordeal took Priya about 3 hours. But Priya endured, made it all the way through and even managed to say YES (even though she was hungry, tired and it was pitch black outside instead of "at sunset" as planned). They were thrilled to tell all their family back east and very EXCITED to start their lives together. </p>
                                     <p>See the <a href="https://www.youtube.com/watch?v=axeQ2t-WpUQ">Full Proposal Video</a>. </p>
@@ -789,7 +191,7 @@
                         <div class="wedding-event-section-title">Our Wedding</div>
                         <div class="wedding-event-section-title-border-bottom"></div>
                         <p class="wedding-event-section-description"></p>
-                        <div class="wedding-event-section-image-container"><img class="wedding-event-section-image" src="./Priya Amin and Vishal Amin's Wedding_files/b9c0df1d-5449-4f4e-b9a6-b6dff3ee4f1a~rt_-cr_-rs_1800.h"></div>
+                        <div class="wedding-event-section-image-container"><img class="wedding-event-section-image" src="//media.front.xoedge.com/images/b9c0df1d-5449-4f4e-b9a6-b6dff3ee4f1a~rt_-cr_"></div>
                         <div class="wedding-event-section-items">
                             <div class="wedding-event-item">
                                 <div class="wedding-event-title"></div>
@@ -1090,8 +492,6 @@
         <div class="footer-text">Website created on <a href="http://www.theknot.com/" target="_blank">The Knot</a>. Designed by Minted.</div>
     </div>
     <script type="text/javascript">
-        segmentIoTrackPage()
-        segmentIoTrackPhoto()
         setAnchorTarget()
         setPreview()
         loadGoogleFonts(["Cabin", "Calligraffitti", "Alex Brush"])
