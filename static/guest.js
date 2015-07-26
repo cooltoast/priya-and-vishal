@@ -5771,12 +5771,14 @@ if (function(t, e) {
             }
             return t.prototype.loadContent = function(t) {
                 var e;
-                return e = $("#wedding-data").data().url + "/registry/content/", $.get(e, function(e) {
+                //HACK return e = $("#wedding-data").data().url + "/registry/content/", $.get(e, function(e) {
+                return e = "https://www.theknot.com/us/priya-amin-and-vishal-amin-aug-2015/registry/content/", $.get(e, function(e) {
                     return t.html(e), Elemental.load(".registry-section"), Elemental.load(".retailer-section-items")
                 })
             }, t.prototype.sendSegmentIo = function(t, e) {
                 var n;
-                return null == e && (e = {}), n = $("#wedding-data").data(), e.weddingDate = n.weddingDate, e.createdDate = n.createdDate, e.owner = !!$.cookie("preview"), window.analytics.track(t, e)
+                //HACK return null == e && (e = {}), n = $("#wedding-data").data(), e.weddingDate = n.weddingDate, e.createdDate = n.createdDate, e.owner = !!$.cookie("preview"), window.analytics.track(t, e)
+                return null == e && (e = {}), n = "https://www.theknot.com/us/priya-amin-and-vishal-amin-aug-2015/registry/content/", e.weddingDate = n.weddingDate, e.createdDate = n.createdDate, e.owner = !!$.cookie("preview"), window.analytics.track(t, e)
             }, t.prototype.sendRetailerTracking = function(t) {
                 var e, n = this;
                 return e = {
