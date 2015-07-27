@@ -85,7 +85,7 @@
                     <button class="rsvp">RSVP</button>
                     <nav class="main-nav-hidden" data-behavior="Registry.fetchRetailers" id="main-nav">
                         <ul>
-                            <li><a class="selected" href="/">Our Wedding</a>
+                          <li><a class="{% if selected == 'main' %}selected{% endif %}" href="/">Our Wedding</a>
                                 <ul>
                                     <li><a class="" href="/#our-story">Our Story</a></li>
                                     <li><a class="" href="/#our-wedding">Our Wedding</a></li>
@@ -93,16 +93,16 @@
                                     <li><a class="" href="/#wedding-party">Wedding Party</a></li>
                                 </ul>
                             </li>
-                            <li><a class="" href="/details">Details</a>
+                            <li><a class="{% if selected == 'details' %}selected{% endif %}" href="/details">Details</a>
                                 <ul>
                                     <li><a class="" href="/details#accommodations">Accommodations</a></li>
                                     <li><a class="" href="/details#travel-and-transportation">Travel and Transportation</a></li>
                                 </ul>
                             </li>
-                            <li><a class="" href="/photos">Photos</a>
+                            <li><a class="{% if selected == 'college-years' or selected == 'engagement' %}selected{% endif %}" href="/photos">Photos</a>
                                 <ul>
-                                    <li><a class="" href="/photos/college-years">College Years</a></li>
-                                    <li><a class="" href="/photos/engagement">Engagement Photos</a></li>
+                                    <li><a class="{% if selected == 'college-years' %}selected{% endif %}" href="/photos/college-years">College Years</a></li>
+                                    <li><a class="{% if selected == 'engagemenet' %}selected{% endif %}" href="/photos/engagement">Engagement Photos</a></li>
                                 </ul>
                             </li>
                             <li><a class="" href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?pwsToken=&eventType=Wedding&registryId=542149832&wcref=yes&wcsid=225743810">Registry</a>
