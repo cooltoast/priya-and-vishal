@@ -1,13 +1,23 @@
 {% extends "base.html" %}
 {% block pageClass%}wedding-page{% endblock %}
 {% block content %}
+  <script>
+    window.onload = function() {
+      var getDays = function() {
+        var end = new Date("August 29, 2015");
+        var diff = end.getTime() - new Date().getTime();
+        return Math.floor(diff/1000/60/60/24);
+      }
+      document.getElementById("wedding-countdown").innerHTML = getDays() + " days to go!";
+    }
+  </script>
   <header id="header">
     <div class="header-background"></div>
     <div id="cover-image"><img class="wide-cover-image" src="//media.front.xoedge.com/images/c6d9667f-ebc1-4241-94db-34fa687b97b7~rt_0-cr_0.0.2781.1390-rs_1800.h" title=""></div>
     <div id="title-container">
         <h1 id="wedding-title">Priya and Vishal</h1>
         <h2 id="wedding-date-location"><span id="wedding-date">August 29, 2015</span> in <span id="wedding-location">Marco Island, FL</span></h2>
-        <h2 id="wedding-countdown">34 days to go!</h2>
+        <h2 id="wedding-countdown"></h2>
     </div>
   </header>
   <div id="content">
