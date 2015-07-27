@@ -10,6 +10,10 @@ def render_page(name, *args, **kwargs):
 def home():
   return render_page('main')
 
+@app.route("/itinerary")
+def itinerary():
+  return render_page('itinerary')
+
 @app.route("/details")
 def details():
   return render_page('details')
