@@ -14,9 +14,9 @@ def home():
 def itinerary():
   return render_page('itinerary')
 
-@app.route("/details")
-def details():
-  return render_page('details')
+@app.route("/attractions")
+def attractions():
+  return render_page('attractions')
 
 @app.route("/photos")
 def photos():

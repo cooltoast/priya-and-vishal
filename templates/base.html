@@ -21,8 +21,8 @@
       <style>
           body {
               color: #ffffff;
-              font-family: Cabin;
-              font-size: 12px;
+              font-family: Century Gothic;
+              font-size: 16px;
               font-style: normal;
           }
           
@@ -87,16 +87,16 @@
                         <ul>
                           <li><a class="{% if selected == 'main' %}selected{% endif %}" href="/">Our Wedding</a>
                                 <ul>
-                                    <li><a class="" href="/#our-story">Our Story</a></li>
-                                    <li><a class="" href="/#our-wedding">Our Wedding</a></li>
-                                    <li><a class="" href="/#other-events">Other Events</a></li>
-                                    <li><a class="" href="/#wedding-party">Wedding Party</a></li>
+                                    <li><a class="" href="/#welcome">Welcome</a></li>
                                 </ul>
                             </li>
-                            <li><a class="{% if selected == 'details' %}selected{% endif %}" href="/details">Details</a>
+                            <li><a class="{% if selected == 'attractions' %}selected{% endif %}" href="/attractions">Attractions</a>
                                 <ul>
-                                    <li><a class="" href="/details#accommodations">Accommodations</a></li>
-                                    <li><a class="" href="/details#travel-and-transportation">Travel and Transportation</a></li>
+                                    <li><a class="" href="/attractions#all-day-dining">All Day Dining</a></li>
+                                    <li><a class="" href="/attractions#breakfast">Breakfast</a></li>
+                                    <li><a class="" href="/attractions#lunch-and-dinner">Lunch &amp; Dinner</a></li>
+                                    <li><a class="" href="/attractions#dinner">Dinner</a></li>
+                                    <li><a class="" href="/attractions#activities">Island Activities</a></li>
                                 </ul>
                             </li>
                             <li><a class="{% if selected == 'itinerary' %}selected{% endif %}" href="/itinerary">Itinerary</a></li>
@@ -114,9 +114,6 @@
             </div>
         </div>
     {% block content %}{% endblock %}
-    <div class="theme-image-container-bottom">
-        <div class="theme-image-bottom"></div>
-    </div>
     </div>
     <!--
     <div class="footer">
