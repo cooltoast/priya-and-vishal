@@ -18,25 +18,9 @@ def itinerary():
 def attractions():
   return render_page('attractions')
 
-@app.route("/photos")
-def photos():
-  return render_page('photos')
-
-@app.route("/photos/college-years")
-def collegeYears():
-  return render_page('college-years')
-
-@app.route("/photos/engagement")
-def engagement():
-  return render_page('engagement')
-
-@app.route("/registry")
-def registry():
-  return render_page('registry')
-
-@app.route("/hello")
-def hello():
-  return "Hello World!"
+@app.route("/newsfeed")
+def newsfeed():
+  return render_page('newsfeed')
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)
