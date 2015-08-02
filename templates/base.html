@@ -9,6 +9,10 @@
       <link data-turbolinks-track="true" href="/static/layouts/layout1/app-808026d210cfdae0dbce94e56fbd457b.css" media="all" rel="stylesheet">
       <link data-turbolinks-track="true" href="/static/themes/garden_lights-plum/v1/style-6d2c9ce2ce53e10893c06e8629817294.css" media="all" rel="stylesheet">
       <script data-turbolinks-track="true" src="/static/guest.js"></script>
+      <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src="/static/stackblur.min.js"></script>
+      <script src="/static/html2canvas.js"></script>
+      <!--http://jsfiddle.net/nallenscott/WtQjY/41/-->
       <style>
           #header + #content > #left > #rlblock_left,
           #content > #right > .dose > .dosesingle,
@@ -60,9 +64,39 @@
               font-size: 48px;
               font-style: normal;
           }
+          .blurheader {
+              background: rgba(255, 255, 255, .6);
+              height: 88px;
+              position: fixed;
+              width: 100%;
+              top: 0;
+              border-bottom:1px solid rgba(0, 0, 0, .2);
+              z-index: 10000000000;
+              overflow: hidden;
+              z-index: 10000;
+              left: 0;
+          }
+          #canvas {
+              opacity:1;
+              z-index: 100;
+              position: absolute;
+              display: block;
+              top: 3px;
+          }
       </style>
   </head>
   <body>
+    <script>
+    $( document ).ready(function() {
+      html2canvas($("body"), {
+        onrendered: function (canvas) {
+          $(".blurheader").append(canvas);
+          $("canvas").attr("id", "canvas");
+          stackBlurCanvasRGB( 'canvas', 0, 0, $("canvas").width(), $("canvas").height(), 10);
+        }
+      });
+    });
+    </script>
     <div id="main-container-background"></div>
     <div class={% block pageClass %}{% endblock %} id="main-container">
         <div class="theme-image-container">
@@ -113,6 +147,7 @@
                 </div>
             </div>
         </div>
+        <div class="blurheader"></div>
     {% block content %}{% endblock %}
     </div>
     <!--
