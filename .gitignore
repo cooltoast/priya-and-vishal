@@ -1,5 +1,6 @@
 # Created by https://www.gitignore.io
 authorized_senders.json
+*.db
 
 # vim swp files
 *.swp

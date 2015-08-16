@@ -1,4 +1,5 @@
 import json
+import datetime
 from flask import Flask, render_template, request, g
 from twilio import twiml
 import sqlite3
@@ -31,8 +32,10 @@ def get_db():
   return db
 
 def insert_db(query, args=()):
-  cur = get_db().execute(query, args)
+  db = get_db()
+  cur = db.execute(query, args)
   cur.close()
+  db.commit()
 
 def query_db(query, args=(), one=False):
   cur = get_db().execute(query, args)
