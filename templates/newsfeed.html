@@ -17,7 +17,15 @@
                     <div class="location-item">
                         <br>
                         <div class="location-address">
+                        {% if news %}
+                          {% for i in news %}
+                            {{i.sender}}
+                            {{i.timestamp}}
+                            {{i.message}}
+                          {% endfor %}
+                        {% else %}
                         Stay tuned for updates!
+                        {% endif %}
                         </div>
                     </div>
                     <div class="location-separator"></div>
