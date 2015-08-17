@@ -2970,8 +2970,7 @@ button.main-nav {
 }
 .item-separator,
 .event-separator,
-.wedding-event-separator,
-.location-separator {
+.wedding-event-separator {
     margin-top: 20px;
     margin-bottom: 20px
 }
@@ -3066,11 +3065,33 @@ button.main-nav {
         text-align: center
     }
 }
+/* XXX */
 .location-address {
-    text-align: center;
     font-size: 1em;
-    line-height: 100%
+    line-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-bottom: 20px;
+    font-family: 'Calligraffitti';
 }
+.location-time {
+    font-weight: bold;
+    flex: 0 0 auto;
+}
+.location-details {
+    flex: 0 1 auto;
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.location-aside {
+    margin-top: 5px;
+    font-size: 0.8em;
+    font-weight: normal;
+    font-family: 'HelveticaNeue-Light';
+}
+
 .location-venue,
 .location-attire,
 .location-date {
