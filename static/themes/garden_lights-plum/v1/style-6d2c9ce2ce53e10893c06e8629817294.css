@@ -74,9 +74,6 @@ button:hover {
   background-color: rgba(240,26,26,0.98);
 }
 
-#main-container-background,#main-nav>ul>li>ul {
-  background-color: #5d545d;
-}
 
 .section-title,.event-section-title,.wedding-event-section-title,.wedding-party-section-title,.location-section-title,.album-section-title,.photo-section-title,.registry-section-title {
   font-family: "Stint Ultra Expanded";

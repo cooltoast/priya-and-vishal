@@ -2721,7 +2721,8 @@ button.main-nav {
     text-align: left;
     max-width: 840px;
     margin: 0 auto;
-    font-size: 1em
+    font-size: 1em;
+    line-height: 100%
 }
 .section-description p,
 .item-description p,
@@ -3068,7 +3069,7 @@ button.main-nav {
 .location-address {
     text-align: center;
     font-size: 1em;
-    line-height: 2
+    line-height: 100%
 }
 .location-venue,
 .location-attire,
