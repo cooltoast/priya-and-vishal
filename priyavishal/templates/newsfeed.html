@@ -15,11 +15,11 @@
                 <p class="location-section-description"></p>
                 <div class="location-section-items">
                     <div class="location-item">
-                        <div class="location-address" style="display:block">
+                        <div class="item-description" style="display:block">
                         {% if news %}
                           {% for i in news %}
                             <blockquote>
-                            <p style="line-height:1.3;font-weight:bold">{{i.message}}</p>
+                            <p style="line-height:1.3;font-weight:bold;font-size:1.4em">{{i.message}}</p>
                             <br>
                             <footer style="text-align:right">— {{i.sender}}, {{i.timestamp}}</footer>
                             </blockquote>
