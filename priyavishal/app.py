@@ -67,7 +67,7 @@ def attractions():
 
 @app.route("/newsfeed")
 def newsfeed():
-  news = query_db("select * from newsfeed")
+  news = query_db("select * from newsfeed order by ROWID desc")
   return render_page('newsfeed', news=news)
 
 @app.route("/photos")

@@ -18,10 +18,12 @@
                         <br>
                         <div class="location-address">
                         {% if news %}
+                          <table style="width:100%" id="newsTable">
                           {% for i in news %}
-                            {{i.sender}}
-                            {{i.timestamp}}
-                            {{i.message}}
+                            <tr>
+                            <td>{{i.timestamp}}</td>
+                            <td>{{i.message}}</td>
+                            </tr>
                           {% endfor %}
                         {% else %}
                         Stay tuned for updates!
