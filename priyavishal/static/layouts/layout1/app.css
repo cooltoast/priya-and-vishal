@@ -3083,12 +3083,14 @@ button.main-nav {
     font-weight: bold;
     flex: 0 0 auto;
     text-align: right;
+    margin-left: 10px;
 }
 .location-details {
     flex: 0 1 auto;
     text-align: left;
     font-size: 1.2em;
     font-weight: bold;
+    margin-right: 10px;
 }
 .location-aside {
     margin-top: 5px;
