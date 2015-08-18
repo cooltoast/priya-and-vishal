@@ -15,15 +15,16 @@
                 <p class="location-section-description"></p>
                 <div class="location-section-items">
                     <div class="location-item">
-                        <br>
-                        <div class="location-address">
+                        <div class="location-address" style="display:block">
                         {% if news %}
-                          <table style="width:100%" id="newsTable">
                           {% for i in news %}
-                            <tr>
-                            <td>{{i.timestamp}}</td>
-                            <td>{{i.message}}</td>
-                            </tr>
+                            <blockquote>
+                            <p style="line-height:1.3;font-weight:bold">{{i.message}}</p>
+                            <br>
+                            <footer style="text-align:right">— {{i.sender}}, {{i.timestamp}}</footer>
+                            </blockquote>
+                            <div class="location-separator" style="margin-bottom:20px"></div>
+                            <br>
                           {% endfor %}
                         {% else %}
                         Stay tuned for updates!
