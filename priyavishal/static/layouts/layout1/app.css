@@ -3078,6 +3078,7 @@ button.main-nav {
 .location-time {
     font-weight: bold;
     flex: 0 0 auto;
+    text-align: right;
 }
 .location-details {
     flex: 0 1 auto;
