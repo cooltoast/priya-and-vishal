@@ -16,14 +16,35 @@
                 <div class="location-section-items">
                     <div class="location-item">
                         <br>
-                        <div class="location-address">
-                        Stay tuned for updates!
-                        </div>
+						<center>
+							Our wedding photo album is on 
+							<br><img src="https://wedpics.com/m/img/wedding/logo.png" /><br>
+							<br>We need your help to make it awesome! Install the WedPics app on your phone and post lots of pictures and videos!
+
+                    		<div class="location-separator"></div>
+
+                        	<div class="photos">
+								<button class="btn" id="view-photos">View photos online</button>
+								<br>
+
+								<button class="btn" id="install-app">Install WedPics app</button>
+								<br>
+						        Our wedding ID is <span style="font-family: monospace">aminsquared</span>
+							</div>
+						</center>
                     </div>
-                    <div class="location-separator"></div>
                 </div>
             </div>
         </div>
     </div>
   </div>
+  <script type="text/javascript">
+	$("#view-photos").click(function() {
+		window.location = "http://wedpics.com/wedding/GIYDIMJUGY4Q";
+    });
+
+    $("#install-app").click(function() {
+		window.location = "https://goo.gl/OKXwJg";
+    });
+  </script>
 {% endblock %}

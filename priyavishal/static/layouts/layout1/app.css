@@ -3422,3 +3422,30 @@ img.photo-image {
         float: none
     }
 }
+
+/* XXX */
+.photo-view {
+	text-align: center;
+	font-family: serif;
+	font-size: 16px !important;
+}
+
+.photo-post {
+	font-family: serif;
+	line-height: 1.2em
+}
+
+.photo-steps {
+
+}
+
+.photo-steps li {
+	margin-bottom: 10px;
+	list-style: circle;
+}
+
+.btn {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+    display: block !important
+}
