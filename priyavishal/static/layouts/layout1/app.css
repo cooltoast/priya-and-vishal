@@ -2823,10 +2823,14 @@ button.main-nav {
 .event-section-items,
 .wedding-event-section-items,
 .wedding-party-section-items,
-.location-section-items,
 .album-section-items,
 .photo-section-items {
     max-width: 840px;
+    margin: auto
+}
+
+.location-section-items {
+    max-width: 540px;
     margin: auto
 }
 .section-separator,
