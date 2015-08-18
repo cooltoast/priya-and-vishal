@@ -57,13 +57,21 @@ def render_page(name, *args, **kwargs):
 def home():
   return render_page('main')
 
+@app.route("/amenities")
+def amenities():
+  return render_page('amenities')
+
+@app.route("/activities")
+def activities():
+  return render_page('activities')
+
 @app.route("/itinerary")
 def itinerary():
   return render_page('itinerary')
 
-@app.route("/attractions")
-def attractions():
-  return render_page('attractions')
+@app.route("/dining")
+def dining():
+  return render_page('dining')
 
 @app.route("/newsfeed")
 def newsfeed():
