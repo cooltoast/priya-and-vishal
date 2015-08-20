@@ -7,10 +7,12 @@ import os
 
 app = Flask(__name__)
 
-DATABASE = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'db.db')
+ROOT_PATH = os.path.abspath(os.path.dirname(__file__))
+DATABASE = os.path.join(ROOT_PATH, 'db.db')
 
 try:
-  AUTHORIZED_SENDERS = json.load(open("authorized_senders.json"))
+  AUTHORIZED_SENDERS = json.load(open(os.path.join(ROOT_PATH, "authorized_senders.json")))
+  print(AUTHORIZED_SENDERS)
 except Exception as e:
   print(e)
   print("NO SENDERS AUTHORIZED")
@@ -90,11 +92,11 @@ def twilio():
 
   if sender in AUTHORIZED_SENDERS:
     if body is not None:
-      print("%s: %s" % (sender, body))
-      insert_db('insert into newsfeed values(?,?,?)', (sender, str(datetime.datetime.now()), body))
-      resp.message("test")
+      name = AUTHORIZED_SENDERS[sender]
+      insert_db('insert into newsfeed values(?,?,?)', (name, str(datetime.datetime.now().strftime("%A %B %-d %Y, %-I:%M%p")), body))
+      resp.message("posted")
     else:
-        resp.message("but no message")
+        resp.message("no message provided")
   else:
     resp.message("no youre not authorized")
 
