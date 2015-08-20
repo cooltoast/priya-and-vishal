@@ -3127,6 +3127,15 @@ button.main-nav {
     font-family: 'HelveticaNeue-Light';
 }
 
+.amenity-list {
+   text-align: center;
+   line-height: 1.2em;
+}
+
+.amenity-list li {
+   margin-bottom: 15px;
+}
+
 .location-venue,
 .location-attire,
 .location-date {
