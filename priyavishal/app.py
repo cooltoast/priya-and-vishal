@@ -93,7 +93,8 @@ def twilio():
   if sender in AUTHORIZED_SENDERS:
     if body is not None:
       name = AUTHORIZED_SENDERS[sender]
-      insert_db('insert into newsfeed values(?,?,?)', (name, str(datetime.datetime.now().strftime("%A %B %-d %Y, %-I:%M%p")), body))
+      messageTime = datetime.datetime.utcnow() - datetime.timedelta(hours=4)
+      insert_db('insert into newsfeed values(?,?,?)', (name, str(messageTime.strftime("%A %B %-d %Y, %-I:%M%p")), body))
       resp.message("posted")
     else:
         resp.message("no message provided")
